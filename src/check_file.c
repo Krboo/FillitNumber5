@@ -6,20 +6,11 @@
 /*   By: pmartine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 15:53:02 by pmartine          #+#    #+#             */
-/*   Updated: 2016/01/19 22:52:20 by pmartine         ###   ########.fr       */
+/*   Updated: 2016/01/20 18:58:54 by pmartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-
-static void		ft_bzero_tetriminos(char **tetriminos)
-{
-	int				i;
-
-	i = -1;
-	while (++i < 26)
-		tetriminos[i] = NULL;
-}
 
 static char		**ft_read_file(int fd)
 {
