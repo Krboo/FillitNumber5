@@ -6,7 +6,7 @@
 /*   By: pmartine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 15:53:02 by pmartine          #+#    #+#             */
-/*   Updated: 2016/01/20 18:58:54 by pmartine         ###   ########.fr       */
+/*   Updated: 2016/01/25 14:17:45 by pmartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static char		**ft_read_file(int fd)
 		j = j + (unsigned int)ft_strlen(tetriminos[i]);
 		++i;
 	}
-	if (tetriminos[i - 1][20] == '\n')
+	if (tetriminos[i - 1][20] != '\0')
 		return (NULL);
 	return (tetriminos);
 }
@@ -74,6 +74,8 @@ static int		parse_tetriminos(char **tetriminos)
 		i = 0;
 		while ((*tetriminos)[i] && (*tetriminos)[i] != '#')
 			++i;
+		if (!(*tetriminos)[i])
+			return (0);
 		if ((*tetriminos)[i] && ft_istetriminos(*tetriminos, i, letter) != 4)
 			return (0);
 		while ((*tetriminos)[i++])
